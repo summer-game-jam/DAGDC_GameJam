@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c2by2qmi5d435"]
+
+[ext_resource type="Texture2D" uid="uid://bwfw530qht35j" path="res://Resources/debugTextures/robot.png" id="1_nblyi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nblyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

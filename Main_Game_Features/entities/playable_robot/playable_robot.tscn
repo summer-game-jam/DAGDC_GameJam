@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbflqsiceky2l"]
+
+[ext_resource type="Script" uid="uid://oynod3im0sb6" path="res://Main_Game_Features/entities/playable_robot/playable_robot.gd" id="1_lqg5j"]
+[ext_resource type="SpriteFrames" uid="uid://c2by2qmi5d435" path="res://Main_Game_Features/entities/playable_robot/playable_robot_sprites.tres" id="1_sc2d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqg5j"]
+size = Vector2(99, 66)
+
+[node name="playable_robot" type="CharacterBody2D"]
+script = ExtResource("1_lqg5j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_sc2d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 25)
+shape = SubResource("RectangleShape2D_lqg5j")

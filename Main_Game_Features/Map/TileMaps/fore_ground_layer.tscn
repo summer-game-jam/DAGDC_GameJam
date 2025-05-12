@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=4 uid="uid://ctmdbdr77156s"]
+
+[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="1_ioqne"]
+[ext_resource type="PackedScene" uid="uid://cbflqsiceky2l" path="res://Main_Game_Features/entities/playable_robot/playable_robot.tscn" id="2_j6wfs"]
+
+[node name="fore_ground_layer" type="TileMapLayer"]
+position = Vector2(830, 1056)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAD+////AQAAAAAAAAD9////AQAAAAAAAAD8////AQAAAAAAAAD7////AQAAAAAAAAD6////AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD6/wAAAQAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAA=")
+tile_set = ExtResource("1_ioqne")
+
+[node name="playable_robot" parent="." instance=ExtResource("2_j6wfs")]
+position = Vector2(247, -931)

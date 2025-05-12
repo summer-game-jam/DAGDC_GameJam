@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b64hu8w8db2fd"]
 
-[ext_resource type="Script" uid="uid://cnrdhw1cuu6dr" path="res://title_ui.gd" id="1_ad2fi"]
+[ext_resource type="Script" uid="uid://cnrdhw1cuu6dr" path="res://Scripts/Scenes/title_ui.gd" id="1_ad2fi"]
 [ext_resource type="AudioStream" uid="uid://dt44bviobqoc5" path="res://Resources/audio/soundEffects/Party Horn - Sound Effect (HD).mp3" id="2_0wjnw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wjnw"]
