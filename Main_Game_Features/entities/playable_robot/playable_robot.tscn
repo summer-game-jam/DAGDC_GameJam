@@ -19,3 +19,15 @@ shape = SubResource("RectangleShape2D_lqg5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_4xske")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -59.0
+offset_right = 20.0
+offset_bottom = -36.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0bas4q7mb6tu"]
+
+[ext_resource type="Script" uid="uid://3wyk4ugld36l" path="res://Main_Game_Features/entities/spwaner/spwaner.gd" id="1_wv5l0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wv5l0"]
+size = Vector2(200, 500)
+
+[node name="Spwaner" type="Node2D"]
+script = ExtResource("1_wv5l0")
+metadata/_custom_type_script = "uid://3wyk4ugld36l"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -185)
+texture = SubResource("PlaceholderTexture2D_wv5l0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Spawner"
