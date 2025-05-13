@@ -41,7 +41,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_timer_timeout() -> void:
-	dead = true
-	emit_signal("bot_out_of_power")
+	if !dead:
+		dead = true
+		emit_signal("bot_out_of_power")
+	#become physics object instead of char body
 	#$CollisionShape2D.call_deferred("set_disabled", true)
 	#$StaticBody2D/CollisionShape2D.call_deferred("set_disabled", false)
+
+func _on_node_button_held_limit_reached() -> void:
+	$Timer.stop()
+	_on_timer_timeout()

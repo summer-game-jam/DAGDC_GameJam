@@ -4,6 +4,8 @@ class_name Level
 #THIS VARAIBLE TO BE REMOVED IN FAVOR FOR A LEVEL MANAGER
 @export var levelID: int = 1
 
+@export var max_robot_limit: int = 3
+
 # all levels need a start, a map, and a endpoint
 # levels can have puzzle elements (entite
 var spawner: Spwaner
@@ -39,6 +41,9 @@ func spwan_robot():
 		var new_robot: Playable_Robot = robot_generator.create_robot()
 		robots.push_back(new_robot)
 		new_robot.connect("bot_out_of_power", spwan_robot)
+		if robots.size() > max_robot_limit:
+			var robot_to_remove: Playable_Robot = robots.pop_front()
+			robot_to_remove.queue_free()
 		spawner.spwan_robot(new_robot)
 		add_child(new_robot)
 	else:
@@ -47,9 +52,12 @@ func spwan_robot():
 #TO CHANGE: PLACEHOLDER
 func progress_next_level():
 	if levelID == 1:
+		for robot in robots:
+			robot.queue_free()
 		call_deferred("level2")
 	else:
 		get_tree().quit()
+		pass
 
 # to remove
 func level2():
