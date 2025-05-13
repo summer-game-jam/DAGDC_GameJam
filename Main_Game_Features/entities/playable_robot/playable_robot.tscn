@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://oynod3im0sb6" path="res://Main_Game_Features/entities/playable_robot/playable_robot.gd" id="1_lqg5j"]
 [ext_resource type="SpriteFrames" uid="uid://c2by2qmi5d435" path="res://Main_Game_Features/entities/playable_robot/playable_robot_sprites.tres" id="1_sc2d2"]
 [ext_resource type="Texture2D" uid="uid://cffnddw05v0hy" path="res://Resources/debugTextures/battery.png" id="3_4xske"]
-[ext_resource type="Script" uid="uid://g7g8h6gm4yfo" path="res://Scripts/Utility/hold_right_click_listener.gd" id="4_x7d6m"]
+[ext_resource type="Script" uid="uid://g7g8h6gm4yfo" path="res://Misc_Scripts/Utility/hold_right_click_listener.gd" id="4_x7d6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqg5j"]
-size = Vector2(99, 92)
+size = Vector2(99, 124)
 
 [node name="playable_robot" type="CharacterBody2D"]
 script = ExtResource("1_lqg5j")
@@ -15,7 +15,7 @@ script = ExtResource("1_lqg5j")
 sprite_frames = ExtResource("1_sc2d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 12)
+position = Vector2(0.5, -4)
 shape = SubResource("RectangleShape2D_lqg5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

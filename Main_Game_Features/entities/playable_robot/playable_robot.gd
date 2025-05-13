@@ -5,7 +5,7 @@ signal bot_out_of_power
 
 var gravity: float = 20 # going down is the positive y direction
 
-var jump_force: float = -650
+var jump_force: float = -600
 
 var max_horizonal_move_speed: float = 500
 var horizonal_move_speed: float = 2000

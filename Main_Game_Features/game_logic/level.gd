@@ -8,46 +8,45 @@ class_name Level
 
 # all levels need a start, a map, and a endpoint
 # levels can have puzzle elements (entite
-var spawner: Spwaner
+var spawners: Array[Spwaner]
 var goal: Goal
 
 var robot_generator: Robot_Factory = Robot_Factory.new()
 
 var robots: Array[Playable_Robot] = []
 
+var robot_in_production: bool = true
+
 func _ready() -> void:
 	for child in get_children():
 		if child is Spwaner:
-			if spawner:
-				push_error("ERROR: multiple spanwers! Only one spanwer is supported! Please fix!")
-			else:
-				spawner = child
+			spawners.append(child)
+			child.connect("create_robot_request", spwan_robot)
 		if child is Goal:
 			if goal:
 				push_error("ERROR: multiple goals! Olny one goal is supported! Please fix!")
 			else:
 				goal = child
-	if !spawner:
+	if spawners.size() == 0:
 		push_error("ERROR: no spawner!")
 	if !goal:
 		push_error("ERROR: no goal!")
 	else:
 		goal.connect("goal_hit_by_player", progress_next_level)
-	spwan_robot()
+	robot_in_production = false
 
-func spwan_robot():
-	if spawner:
+func spwan_robot(spawner: Spwaner):
+	if !robot_in_production:
 		print("Spawning Robot")
 		var new_robot: Playable_Robot = robot_generator.create_robot()
 		robots.push_back(new_robot)
-		new_robot.connect("bot_out_of_power", spwan_robot)
+		new_robot.connect("bot_out_of_power", robot_died)
 		if robots.size() > max_robot_limit:
 			var robot_to_remove: Playable_Robot = robots.pop_front()
 			robot_to_remove.queue_free()
 		spawner.spwan_robot(new_robot)
 		add_child(new_robot)
-	else:
-		push_error("ERROR: no spwaner to spwan robot!")
+		robot_in_production = true
 
 #TO CHANGE: PLACEHOLDER
 func progress_next_level():
@@ -56,9 +55,12 @@ func progress_next_level():
 			robot.queue_free()
 		call_deferred("level2")
 	else:
-		get_tree().quit()
+		#get_tree().quit()
 		pass
 
 # to remove
 func level2():
 	get_tree().change_scene_to_file("res://Main_Game_Features/Map/levels/debugLevels/debugLevel2.tscn")
+
+func robot_died():
+	robot_in_production = false
