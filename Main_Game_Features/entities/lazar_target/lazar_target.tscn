@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://6e7ni4rn0f8a"]
+
+[ext_resource type="Script" uid="uid://ie712qqe5i5x" path="res://Main_Game_Features/entities/lazar_target/lazar_target.gd" id="1_eixep"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ejcfi"]
+size = Vector2(30, 100)
+
+[node name="lazar_target" type="Node2D"]
+script = ExtResource("1_eixep")
+metadata/_custom_type_script = "uid://dxhyvs3305yvi"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_ejcfi")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "lazar target"
