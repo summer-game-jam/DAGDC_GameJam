@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=4 uid="uid://ct3huxsmadifn"]
+
+[ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_fbd3n"]
+[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="2_ti62b"]
+[ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="3_111qk"]
+[ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="4_ofpd2"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/spwaner.tscn" id="5_n6b0p"]
+[ext_resource type="PackedScene" uid="uid://r100jm0h2on2" path="res://Main_Game_Features/entities/lazar_block/lazar_block.tscn" id="6_1ppb2"]
+[ext_resource type="PackedScene" uid="uid://6e7ni4rn0f8a" path="res://Main_Game_Features/entities/lazar_target/lazar_target.tscn" id="7_1ppb2"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_fbd3n")
+max_robot_limit = 1
+metadata/_custom_type_script = "uid://t6wke0s34n72"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAANAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAHAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAACAAcAAAAAAAAAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAANAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAAHAAYAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAA=")
+tile_set = ExtResource("2_ti62b")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(1773, 322, 1833, 335, 1831, 562, 1363, 560, 1324, 729)
+
+[node name="Goal" parent="." instance=ExtResource("3_111qk")]
+position = Vector2(1668, 799)
+
+[node name="door" parent="." instance=ExtResource("4_ofpd2")]
+position = Vector2(1362, 772)
+scale = Vector2(0.489528, 0.489528)
+
+[node name="Spwaner" parent="." instance=ExtResource("5_n6b0p")]
+position = Vector2(369, 216)
+
+[node name="lazar" parent="." instance=ExtResource("6_1ppb2")]
+position = Vector2(1409, 459)
+
+[node name="lazar_target" parent="." instance=ExtResource("7_1ppb2")]
+position = Vector2(1772, 306)

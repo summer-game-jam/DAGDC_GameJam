@@ -27,8 +27,9 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Main/": "purple",
+"res://Main_Game_Features/": "blue",
+"res://Misc_Scripts/": "gray",
 "res://Resources/": "green",
-"res://Scripts/": "gray",
 "res://game_mechanic_1/": "red",
 "res://game_mechanic_2/": "orange"
 }
@@ -63,6 +64,11 @@ interact={
 right_click={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(172, 4),"global_position":Vector2(181, 52),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+left_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(160, 14),"global_position":Vector2(169, 62),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
