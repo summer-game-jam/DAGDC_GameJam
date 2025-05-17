@@ -1,17 +1,17 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cw1a14ujn7xcw"]
 
-[ext_resource type="Texture2D" uid="uid://bil0l0klxdh1r" path="res://Resources/tile_textures/wall_tile.png" id="1_ncvn3"]
-[ext_resource type="Texture2D" uid="uid://b3cbaoha5fq6h" path="res://Resources/tile_textures/floor_basic_tile.png" id="2_ncvn3"]
+[ext_resource type="Texture2D" uid="uid://gu7tx1605vam" path="res://Resources/tile_textures/wall_tile.png" id="1_ncvn3"]
+[ext_resource type="Texture2D" uid="uid://cik8cjsu4v240" path="res://Resources/tile_textures/floor_basic_tile.png" id="2_ncvn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3dal"]
 texture = ExtResource("1_ncvn3")
-texture_region_size = Vector2i(64, 64)
+texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usjp6"]
 texture = ExtResource("2_ncvn3")
-texture_region_size = Vector2i(64, 64)
+texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -41, 64, -41, 64, 64, -64, 64)
 
