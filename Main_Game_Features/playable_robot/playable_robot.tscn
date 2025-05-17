@@ -43,6 +43,7 @@ max_held_time_requirment = 1.0
 script = ExtResource("5_jw5dh")
 
 [node name="pick_up_hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pick_up_hitbox"]
 position = Vector2(-2.5, -4.5)

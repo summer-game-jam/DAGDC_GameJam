@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2jgxxsmm2cnj"]
 
-[ext_resource type="Script" uid="uid://du76l1slpf8xq" path="res://Scripts/Scenes/level_menu.gd" id="1_5ttn0"]
+[ext_resource type="Script" uid="uid://du76l1slpf8xq" path="res://Misc_Scripts/Scenes/level_menu.gd" id="1_5ttn0"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -17,32 +17,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ttn0")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -46.5
+offset_right = 64.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level Completed"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NextLevelButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="NextLevelButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Next Level"
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu
 "
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

@@ -13,15 +13,6 @@ var level_loader: LevelLoader
 var level_menu: LevelMenu
 var title_ui: TitleUI
 
-func _ready() -> void:
-	title_ui = preload("res://Main/menu_ui/title_ui.tscn").instantiate()
-	level_loader = preload("res://Main/level_loader/level_loader.tscn").instantiate()
-	level_menu = preload("res://Main/menu_ui/level_menu.tscn").instantiate()
-	
-	level_loader.connect("level_menu_request", open_level_menu)
-	level_menu.connect("next_level_request", load_next_level)
-	level_menu.connect("main_menu_request", back_to_menu)
-
 func open_level_menu():
 	level_menu.show_menu()
 	

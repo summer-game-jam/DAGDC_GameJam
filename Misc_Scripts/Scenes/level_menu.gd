@@ -7,7 +7,7 @@ signal main_menu_request
 #var current_level: int
 
 func _ready() -> void:
-	visible = false
+	hide_menu()
 
 # if level number is needed here
 #func set_level_number(level_number) -> void:

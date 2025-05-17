@@ -16,7 +16,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	update_battery()
-	move_player(delta)
+	if !dead:
+		move_player(delta)
 	move_and_slide()
 	if abs(velocity.y) < 100: # shouldn't push if in air
 		handle_push_collisions(delta)
@@ -55,7 +56,7 @@ func move_player(delta: float) -> void:
 		else:
 			velocity.y = 0
 		if horizonal_move_unit_vector == 0:
-			velocity.x = 0
+			velocity.x *= 0.9
 		else:
 			velocity.x += delta * horizonal_move_unit_vector * horizonal_move_speed
 			velocity.x = clamp(velocity.x, -max_horizonal_move_speed, max_horizonal_move_speed)

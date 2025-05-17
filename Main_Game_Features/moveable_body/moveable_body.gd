@@ -27,7 +27,9 @@ func handle_push_collisions(delta: float) -> void:
 				#collision_body.global_position += -normal * push_speed * delta
 				collision_body.push_block(-normal.x * push_speed * delta)
 				was_char_collision = true
-	if !was_char_collision and !self is Playable_Robot:
+	if !was_char_collision:
+		if !(self is Playable_Robot and self.dead):
+			return
 		velocity.x *= 0.9
 
 func push_block(push_force: float) -> void:

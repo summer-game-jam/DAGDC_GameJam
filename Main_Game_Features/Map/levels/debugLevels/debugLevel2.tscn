@@ -7,7 +7,6 @@
 
 [node name="DebugLevel2" type="Node2D"]
 script = ExtResource("1_jwwl3")
-levelID = 5
 max_robot_limit = 4
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
