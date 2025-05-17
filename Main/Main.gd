@@ -9,17 +9,21 @@ class_name Main_Scene
 # main is captain, main will receive signals from the nodes under it and then give them commands
 # This pattern of control ought to be copied down top level down
 
-var level_loader: LevelLoader
-var level_menu: LevelMenu
-var title_ui: TitleUI
+@onready var ui_controller: UI_Controller = $UIController
+@onready var level_loader: LevelLoader = $LevelLoader
 
-func open_level_menu():
-	level_menu.show_menu()
+func _ready() -> void:
+	ui_controller.connect("quit_request", _on_quit_request)
+	ui_controller.connect("next_level_request", _on_next_level_request)
+	ui_controller.connect("level_request", _on_level_request)
 	
-func load_next_level():
-	level_loader.load_next_level()
-	level_menu.hide_menu()
+func _on_quit_request() -> void:
+	get_tree().quit()
 
-func back_to_menu():
-	pass
-	#level_menu.hide_menu()
+func _on_next_level_request() -> void:
+	ui_controller.hide_level_menu()
+	level_loader.load_next_level()
+
+func _on_level_request(level: int) -> void:
+	#ui_controller.hide_level_select()
+	level_loader.load_level(level)

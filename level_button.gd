@@ -1,10 +1,10 @@
 @tool
 extends Button
-class_name level_button
+class_name LevelButton
 
 signal level_button_selected(level: int)
 
-var level:int = -1
+@export var level: int
 
 func _ready() -> void:
 	set_level(level)

@@ -7,6 +7,9 @@ class_name TitleUI
 # timer container
 var timer: Timer
 
+# emitted when start button is pressed
+signal start_request
+
 # emitted when quit button is pressed. this node doesn't handle quiting!
 signal quit_request
 
@@ -25,10 +28,10 @@ func fade_out() -> void:
 		timer.queue_free()
 	$AnimationPlayer.play("fade_out")
 
-# Tell parent that user wishes to exit
-func quit() -> void:
-	emit_signal("quit_request")
-
 # Joke, Should be changed with a signal to tell parent to start game. Title doesn't start game
-func _on_button_pressed() -> void:
-	pass
+func _on_start_button_pressed() -> void:
+	emit_signal("start_request")
+
+
+func _on_quit_button_pressed() -> void:
+	emit_signal("quit_request")
