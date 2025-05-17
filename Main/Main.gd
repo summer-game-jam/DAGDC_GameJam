@@ -11,11 +11,6 @@ class_name Main_Scene
 
 @onready var ui_controller: UI_Controller = $UIController
 @onready var level_loader: LevelLoader = $LevelLoader
-
-func _ready() -> void:
-	ui_controller.connect("quit_request", _on_quit_request)
-	ui_controller.connect("next_level_request", _on_next_level_request)
-	ui_controller.connect("level_request", _on_level_request)
 	
 func _on_quit_request() -> void:
 	get_tree().quit()

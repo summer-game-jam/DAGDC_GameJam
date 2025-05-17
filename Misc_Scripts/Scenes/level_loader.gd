@@ -7,8 +7,9 @@ var current_level: Level
 var current_level_number: int
 
 var current_map: String
-var directory: String = "res://Main_Game_Features/Map/levels/debugLevels"
+var directory: String = "res://Main_Game_Features/Map/levels/productionLevels"
 var levels: Array[String] = []
+var loading_level: bool = false
 
 func _ready() -> void:
 	var current_dir: DirAccess = DirAccess.open(directory)
@@ -20,22 +21,29 @@ func _ready() -> void:
 	print(levels)
 	current_level_number = 1
 
+func _process(delta: float) -> void:
+	if loading_level:
+		var progress = []
+		ResourceLoader.load_threaded_get_status(current_map, progress)
+		print(progress[0])
+		if progress[0] == 1:
+			current_level = ResourceLoader.load_threaded_get(current_map).instantiate()
+			add_child(current_level)
+			current_level.connect("level_menu_request", on_level_menu_request)
+			loading_level = false
+
 func load_level(level: int) -> void:
 	if current_level:
 		print("deloading level " + str(current_level_number))
+		# come back to this -> eric
 		current_level.queue_free()
 		
 	current_map = directory + "/" + levels[level - 1]
 	print(current_map)
-	var progress = []
-	ResourceLoader.load_threaded_get_status(current_map, progress)
-	print(progress[0])
-	if progress[0] == 1:
-		print("loading level " + str(level))
-		current_level = ResourceLoader.load_threaded_get(current_map).instantiate()
-		add_child(current_level)
-		current_level.connect("level_menu_request", on_level_menu_request)
-		current_level_number = level
+	ResourceLoader.load_threaded_request(current_map)
+	current_level_number = level
+	
+	loading_level = true
 
 func unload_level() -> void:
 	if current_level:

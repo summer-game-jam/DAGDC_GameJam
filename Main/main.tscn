@@ -15,7 +15,7 @@ follow_viewport_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(2.5, 2.5)
-motion_offset = Vector2(3.10598e+06, 0)
+motion_offset = Vector2(3.21169e+06, 0)
 motion_mirroring = Vector2(4590, 0)
 script = ExtResource("5_liyct")
 
@@ -30,3 +30,7 @@ centered = false
 script = ExtResource("8_f6fdm")
 
 [node name="UIController" parent="." instance=ExtResource("6_liyct")]
+
+[connection signal="level_request" from="UIController" to="." method="_on_level_request"]
+[connection signal="next_level_request" from="UIController" to="." method="_on_next_level_request"]
+[connection signal="quit_request" from="UIController" to="." method="_on_quit_request"]
