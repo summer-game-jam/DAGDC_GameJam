@@ -1,5 +1,5 @@
 extends Control
-
+class_name TitleUI
 # Where title screen functions go
 # Remeber, the title screen shouldn't do any work
 # The title screen will emit signals/call functions to other nodes/scenes that are specialized for that job

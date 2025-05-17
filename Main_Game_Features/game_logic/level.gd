@@ -1,6 +1,8 @@
 extends Node2D
 class_name Level
 
+signal level_menu_request
+
 #THIS VARAIBLE TO BE REMOVED IN FAVOR FOR A LEVEL MANAGER
 @export var levelID: int = 1
 
@@ -32,7 +34,7 @@ func _ready() -> void:
 	if !goal:
 		push_error("ERROR: no goal!")
 	else:
-		goal.connect("goal_hit_by_player", progress_next_level)
+		goal.connect("goal_hit_by_player", request_level_menu)
 	spwan_robot()
 
 func spwan_robot():
@@ -49,16 +51,5 @@ func spwan_robot():
 	else:
 		push_error("ERROR: no spwaner to spwan robot!")
 
-#TO CHANGE: PLACEHOLDER
-func progress_next_level():
-	if levelID == 1:
-		for robot in robots:
-			robot.queue_free()
-		call_deferred("level2")
-	else:
-		get_tree().quit()
-		pass
-
-# to remove
-func level2():
-	get_tree().change_scene_to_file("res://Main_Game_Features/Map/levels/debugLevels/debugLevel2.tscn")
+func request_level_menu():
+	emit_signal("level_menu_request")
