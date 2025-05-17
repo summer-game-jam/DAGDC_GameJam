@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbflqsiceky2l"]
+[gd_scene load_steps=7 format=3 uid="uid://cbflqsiceky2l"]
 
 [ext_resource type="Script" uid="uid://oynod3im0sb6" path="res://Main_Game_Features/playable_robot/playable_robot.gd" id="1_lqg5j"]
 [ext_resource type="SpriteFrames" uid="uid://c2by2qmi5d435" path="res://Main_Game_Features/playable_robot/playable_robot_sprites.tres" id="1_sc2d2"]
@@ -8,9 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqg5j"]
 size = Vector2(99, 124)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw5dh"]
-size = Vector2(337, 125)
 
 [node name="playable_robot" type="CharacterBody2D"]
 script = ExtResource("1_lqg5j")
@@ -41,13 +38,10 @@ max_held_time_requirment = 1.0
 
 [node name="pick_up_ability" type="Node2D" parent="."]
 script = ExtResource("5_jw5dh")
+pickup_location = Vector2(0, -114.46)
 
-[node name="pick_up_hitbox" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pick_up_hitbox"]
-position = Vector2(-2.5, -4.5)
-shape = SubResource("RectangleShape2D_jw5dh")
+[node name="RayCast2D" type="RayCast2D" parent="pick_up_ability"]
+target_position = Vector2(100, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_held_limit_reached" from="Node" to="." method="_on_node_button_held_limit_reached"]
