@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://quj8kcmfhn73"]
 
 [ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_jwwl3"]
-[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/spwaner.tscn" id="2_c4230"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_c4230"]
 [ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="3_us22v"]
 [ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="4_7vh6j"]
 

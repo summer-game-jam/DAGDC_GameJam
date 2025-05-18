@@ -1,27 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdtk1as60blo3"]
+[gd_scene load_steps=9 format=3 uid="uid://bdtk1as60blo3"]
 
 [ext_resource type="Script" uid="uid://bhgyg0l83a34d" path="res://Main_Game_Features/entities/door/door.gd" id="1_1o1iq"]
-[ext_resource type="Texture2D" uid="uid://c2hv14o5xe6lq" path="res://Resources/debugTextures/door.png" id="2_0sp7p"]
 [ext_resource type="Script" uid="uid://btt631nghed63" path="res://Main_Game_Features/power_functions/Power_Node.gd" id="3_0sp7p"]
+[ext_resource type="Texture2D" uid="uid://75b02w38vrne" path="res://Resources/object_textures/door_opened.png" id="3_im47u"]
+[ext_resource type="Texture2D" uid="uid://my5x26atai7d" path="res://Resources/object_textures/door_opening.png" id="4_giab6"]
+[ext_resource type="Texture2D" uid="uid://bmqeh857dc8o7" path="res://Resources/object_textures/door_closed.png" id="5_j62ar"]
+[ext_resource type="AudioStream" uid="uid://bpj6qsf65oy3w" path="res://Resources/audio/soundEffects/space-ship-door-open-47688.mp3" id="6_giab6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1iq"]
-size = Vector2(325, 576)
+size = Vector2(137, 576)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogwkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_im47u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_giab6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j62ar")
+}],
+"loop": false,
+"name": &"close",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j62ar")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j62ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_giab6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_im47u")
+}],
+"loop": false,
+"name": &"open",
+"speed": 7.0
+}]
 
 [node name="door" type="Node2D"]
 script = ExtResource("1_1o1iq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0sp7p")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1.5, 1)
+position = Vector2(-2.5, 1)
+scale = Vector2(1, 1.15311)
 shape = SubResource("RectangleShape2D_1o1iq")
 
 [node name="Power_Node" type="Node" parent="."]
 script = ExtResource("3_0sp7p")
 metadata/_custom_type_script = "uid://btt631nghed63"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4.51951, 5.21149)
+sprite_frames = SubResource("SpriteFrames_ogwkn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_giab6")
 
 [connection signal="off_state" from="Power_Node" to="." method="open_door"]
 [connection signal="on_state" from="Power_Node" to="." method="close_door"]

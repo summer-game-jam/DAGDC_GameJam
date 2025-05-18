@@ -1,19 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwtrldc8in3me"]
+[gd_scene load_steps=8 format=3 uid="uid://bwtrldc8in3me"]
 
 [ext_resource type="Script" uid="uid://bparx8hwofatc" path="res://Main_Game_Features/entities/goal/goal.gd" id="1_qyrxy"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qyrxy"]
-size = Vector2(100, 200)
+[ext_resource type="Texture2D" uid="uid://dff1w472hvaft" path="res://Resources/object_textures/goal_unpowered.png" id="2_dihrh"]
+[ext_resource type="Texture2D" uid="uid://cf343y723xyc0" path="res://Resources/object_textures/goal_powered.png" id="3_d56i0"]
+[ext_resource type="AudioStream" uid="uid://b7gg7abqlums1" path="res://Resources/audio/soundEffects/quarter-inch-jack-inserting-into-amplifier-clean-single-push-336618.mp3" id="4_yedqc"]
+[ext_resource type="AudioStream" uid="uid://cxwr28h23nwui" path="res://Resources/audio/soundEffects/success-48018.mp3" id="5_yw486"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyrxy"]
 size = Vector2(99, 198)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yedqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dihrh")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d56i0")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_qyrxy")
 metadata/_custom_type_script = "uid://t6wke0s34n72"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_qyrxy")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -25,6 +42,17 @@ text = "GOAL"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_qyrxy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yedqc")
+animation = &"off"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yedqc")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_yw486")
 
 [connection signal="goal_hit_by_player" from="." to="." method="_on_goal_hit_by_player"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -15,6 +15,7 @@ var robot_generator: Robot_Factory = Robot_Factory.new()
 var robots: Array[Playable_Robot] = []
 
 var robot_in_production: bool = true
+var is_level_over: bool = false
 
 func _ready() -> void:
 	for child in get_children():
@@ -32,10 +33,11 @@ func _ready() -> void:
 		push_error("ERROR: no goal!")
 	else:
 		goal.connect("goal_hit_by_player", request_level_menu)
+		goal.connect("goal_hit_by_player", level_over)
 	robot_in_production = false
 
 func spwan_robot(spawner: Spwaner):
-	if !robot_in_production:
+	if !robot_in_production and !is_level_over:
 		print("Spawning Robot")
 		var new_robot: Playable_Robot = robot_generator.create_robot()
 		robots.push_back(new_robot)
@@ -52,3 +54,7 @@ func robot_died():
 
 func request_level_menu():
 	emit_signal("level_menu_request")
+	
+func level_over():
+	is_level_over = true
+	robots[-1].reached_goal()
