@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://efjob33rrb2s"]
+[gd_scene load_steps=7 format=3 uid="uid://efjob33rrb2s"]
 
 [ext_resource type="Script" uid="uid://cc2nmctwbcg5e" path="res://Main/ui_controller.gd" id="1_ibdv5"]
 [ext_resource type="PackedScene" uid="uid://b64hu8w8db2fd" path="res://Main/menu_ui/controller/title_ui.tscn" id="2_m37ue"]
 [ext_resource type="PackedScene" uid="uid://ckn8m7wgq7735" path="res://Main/menu_ui/controller/level_select.tscn" id="3_ibdv5"]
-[ext_resource type="Theme" uid="uid://4r6b2cnujbph" path="res://gui_assets/waste_no_space.theme" id="3_m37ue"]
+[ext_resource type="Theme" uid="uid://3b6jfloh1m1l" path="res://gui_assets/black_and_white.tres" id="3_m37ue"]
 [ext_resource type="PackedScene" uid="uid://c2jgxxsmm2cnj" path="res://Main/menu_ui/controller/level_menu.tscn" id="4_1lfnu"]
+[ext_resource type="PackedScene" uid="uid://cjo8o1xld6grb" path="res://Main/escapemenu.tscn" id="6_o1g01"]
 
 [node name="ui_controller" type="CanvasLayer"]
 script = ExtResource("1_ibdv5")
@@ -20,9 +21,13 @@ theme = ExtResource("3_m37ue")
 visible = false
 theme = ExtResource("3_m37ue")
 
+[node name="EscapeMenu" parent="." instance=ExtResource("6_o1g01")]
+visible = false
+
 [connection signal="quit_request" from="title_ui" to="." method="_on_title_ui_quit_request"]
 [connection signal="start_request" from="title_ui" to="." method="_on_title_ui_start_request"]
 [connection signal="level_request" from="LevelSelect" to="." method="_on_level_request"]
 [connection signal="main_menu_request" from="LevelSelect" to="." method="_on_level_select_main_menu_request"]
 [connection signal="main_menu_request" from="LevelMenu" to="." method="_on_level_menu_main_menu_request"]
 [connection signal="next_level_request" from="LevelMenu" to="." method="_on_level_menu_next_level_request"]
+[connection signal="reset_request" from="EscapeMenu" to="." method="_on_escape_menu_reset_request"]
