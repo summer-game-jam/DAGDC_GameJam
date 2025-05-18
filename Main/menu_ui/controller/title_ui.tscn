@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b64hu8w8db2fd"]
 
-[ext_resource type="Script" uid="uid://cnrdhw1cuu6dr" path="res://Main/menu_ui/title_ui.gd" id="1_ad2fi"]
+[ext_resource type="Script" uid="uid://cnrdhw1cuu6dr" path="res://Main/menu_ui/title_ui.gd" id="1_w0tpr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wjnw"]
 font_size = 76
@@ -62,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ad2fi")
+script = ExtResource("1_w0tpr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(0, 0, 0, 0)

@@ -43,7 +43,6 @@ func load_level(level: int) -> void:
 		print(current_map)
 		ResourceLoader.load_threaded_request(current_map)
 		current_level_number = level
-		
 		loading_level = true
 
 func deload_level() -> void:
