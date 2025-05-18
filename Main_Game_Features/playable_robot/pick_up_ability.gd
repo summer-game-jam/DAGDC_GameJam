@@ -1,7 +1,7 @@
 extends Node2D
 class_name PickUpAbility
 
-@export var pickup_location:Vector2 = Vector2(-0, -100)
+var pickup_location_offset:Vector2 = Vector2(-0, -72)
 
 var closest_object: MoveableBody
 var picked_up_object: MoveableBody
@@ -36,10 +36,13 @@ func drop():
 
 func update_object():
 	if picked_up_object:
-		picked_up_object.position = global_position + pickup_location
+		var collision_shape: CollisionShape2D = picked_up_object.get_node("CollisionShape2D")
+		var collision_offset = collision_shape.shape.get_rect().size.y / 2
+		picked_up_object.position = global_position + pickup_location_offset - Vector2(0, collision_offset)
 
 func rotate_cast(new_direction: bool):
 	if new_direction:
 		$RayCast2D.target_position.x = -100
 	else:
 		$RayCast2D.target_position.x = 100
+	#if picked_up_object is 

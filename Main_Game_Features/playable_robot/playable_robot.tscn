@@ -38,7 +38,6 @@ max_held_time_requirment = 1.0
 
 [node name="pick_up_ability" type="Node2D" parent="."]
 script = ExtResource("5_jw5dh")
-pickup_location = Vector2(0, -114.46)
 
 [node name="RayCast2D" type="RayCast2D" parent="pick_up_ability"]
 target_position = Vector2(100, 0)
