@@ -9,6 +9,7 @@
 
 [node name="1" type="Node2D"]
 script = ExtResource("1_lx3fx")
+level_name = "Initialization Sequence"
 max_robot_limit = 1
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
@@ -26,3 +27,6 @@ position = Vector2(1689, 687)
 position = Vector2(952, 272)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_w3kg1")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(952, 661)

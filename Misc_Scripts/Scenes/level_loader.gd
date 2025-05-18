@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 			loading_level = false
 
 func load_level(level: int) -> void:
+	$game_cam.reset()
 	if current_level:
 		print("deloading level " + str(current_level_number))
 		# come back to this -> eric
@@ -48,7 +49,9 @@ func load_level(level: int) -> void:
 		current_level_number = level
 		loading_level = true
 
-func deload_level() -> int:
+
+func deload_level() -> void:
+	$game_cam.reset()
 	if current_level:
 		current_level.queue_free()
 	return current_level_number

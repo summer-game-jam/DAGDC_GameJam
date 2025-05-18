@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bar6mgrtcax2u" path="res://Main/Main.gd" id="1_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://b703y16r1yxoj" path="res://Main/quick_esc_listener.tscn" id="1_yh5la"]
-[ext_resource type="Texture2D" uid="uid://rogvfvs7mfc5" path="res://Resources/debugTextures/background.jpg" id="5_k3v36"]
+[ext_resource type="PackedScene" uid="uid://c2pwpapbli546" path="res://Main_Game_Features/game_logic/game_cam/game_cam.tscn" id="5_ib3t1"]
 [ext_resource type="Script" uid="uid://dk3g5ugf2yhp0" path="res://Misc_Scripts/Scenes/move_parallax.gd" id="5_liyct"]
 [ext_resource type="PackedScene" uid="uid://efjob33rrb2s" path="res://Main/menu_ui/controller/ui_controller.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://b1jlm1yrlnyys" path="res://Main/music.tscn" id="7_ib3t1"]
@@ -16,19 +16,21 @@ follow_viewport_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(2.5, 2.5)
-motion_offset = Vector2(3.94411e+06, 0)
+
+motion_offset = Vector2(3.99974e+06, 0)
+
 motion_mirroring = Vector2(4590, 0)
 script = ExtResource("5_liyct")
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_k3v36")
-centered = false
 
 [node name="QuickEscListener" parent="." instance=ExtResource("1_yh5la")]
 
 [node name="LevelLoader" type="Node" parent="."]
 script = ExtResource("8_f6fdm")
+
+[node name="game_cam" parent="LevelLoader" instance=ExtResource("5_ib3t1")]
+position = Vector2(912, 480)
+acceleration = 4.0
+min_distance = 10.0
 
 [node name="UIController" parent="." instance=ExtResource("6_liyct")]
 

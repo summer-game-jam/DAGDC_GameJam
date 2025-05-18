@@ -23,7 +23,6 @@ SaveManager="*res://Main/save_manager/save_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1020
-window/size/mode=2
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
