@@ -1,14 +1,16 @@
 extends Node2D
 class_name Level
 
+@export var level_name: String
 @export var max_robot_limit: int = 3
+var level_number: int
 
 # all levels need a start, a map, and a endpoint
 # levels can have puzzle elements (entite
 var spawners: Array[Spwaner]
 var goal: Goal
 
-signal level_menu_request
+signal level_menu_request(level: int)
 
 var robot_generator: Robot_Factory = Robot_Factory.new()
 
@@ -31,7 +33,7 @@ func _ready() -> void:
 	if !goal:
 		push_error("ERROR: no goal!")
 	else:
-		goal.connect("goal_hit_by_player", request_level_menu)
+		goal.connect("goal_hit_by_player", _on_goal_hit_by_player)
 	robot_in_production = false
 
 func spwan_robot(spawner: Spwaner):
@@ -50,5 +52,5 @@ func spwan_robot(spawner: Spwaner):
 func robot_died():
 	robot_in_production = false
 
-func request_level_menu():
-	emit_signal("level_menu_request")
+func _on_goal_hit_by_player():
+	emit_signal("level_menu_request", level_number)
