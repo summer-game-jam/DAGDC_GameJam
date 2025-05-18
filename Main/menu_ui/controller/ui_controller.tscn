@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://efjob33rrb2s"]
+
+[ext_resource type="Script" uid="uid://cc2nmctwbcg5e" path="res://Main/ui_controller.gd" id="1_ibdv5"]
+[ext_resource type="PackedScene" uid="uid://b64hu8w8db2fd" path="res://Main/menu_ui/title_ui.tscn" id="2_m37ue"]
+[ext_resource type="PackedScene" uid="uid://ckn8m7wgq7735" path="res://Main/menu_ui/controller/level_select.tscn" id="3_ibdv5"]
+[ext_resource type="PackedScene" uid="uid://c2jgxxsmm2cnj" path="res://Main/menu_ui/level_menu.tscn" id="4_1lfnu"]
+
+[node name="ui_controller" type="CanvasLayer"]
+script = ExtResource("1_ibdv5")
+
+[node name="title_ui" parent="." instance=ExtResource("2_m37ue")]
+
+[node name="LevelSelect" parent="." instance=ExtResource("3_ibdv5")]
+visible = false
+
+[node name="LevelMenu" parent="." instance=ExtResource("4_1lfnu")]
+visible = false

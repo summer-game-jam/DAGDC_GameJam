@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwtrldc8in3me"]
+
+[ext_resource type="Script" uid="uid://bparx8hwofatc" path="res://Main_Game_Features/entities/goal/goal.gd" id="1_qyrxy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qyrxy"]
+size = Vector2(100, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyrxy"]
+size = Vector2(99, 198)
+
+[node name="Goal" type="Node2D"]
+script = ExtResource("1_qyrxy")
+metadata/_custom_type_script = "uid://t6wke0s34n72"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_qyrxy")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GOAL"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qyrxy")
+
+[connection signal="goal_hit_by_player" from="." to="." method="_on_goal_hit_by_player"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

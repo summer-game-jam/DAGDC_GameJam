@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://r100jm0h2on2"]
+
+[ext_resource type="Script" uid="uid://b6rad2d88pln7" path="res://Main_Game_Features/entities/lazar_block/lazar.gd" id="1_thw06"]
+[ext_resource type="Script" uid="uid://dsc3twtput0vc" path="res://Main_Game_Features/moveable_body/moveable_body.gd" id="2_7w04q"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7w04q"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08txn"]
+size = Vector2(98, 99)
+
+[node name="MoveableBody" type="CharacterBody2D"]
+script = ExtResource("2_7w04q")
+metadata/_custom_type_script = "uid://dsc3twtput0vc"
+
+[node name="lazar" type="Node2D" parent="."]
+script = ExtResource("1_thw06")
+
+[node name="Sprite2D" type="Sprite2D" parent="lazar"]
+texture = SubResource("PlaceholderTexture2D_7w04q")
+
+[node name="RayCast2D" type="RayCast2D" parent="lazar"]
+target_position = Vector2(5000, 1)
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="lazar"]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+default_color = Color(0, 0.65129, 0.653022, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_08txn")

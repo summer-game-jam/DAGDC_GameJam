@@ -1,5 +1,5 @@
 extends Control
-
+class_name TitleUI
 # Where title screen functions go
 # Remeber, the title screen shouldn't do any work
 # The title screen will emit signals/call functions to other nodes/scenes that are specialized for that job
@@ -31,4 +31,4 @@ func quit() -> void:
 
 # Joke, Should be changed with a signal to tell parent to start game. Title doesn't start game
 func _on_button_pressed() -> void:
-	$AudioStreamPlayer2D.play()
+	pass

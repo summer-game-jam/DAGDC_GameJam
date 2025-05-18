@@ -9,7 +9,17 @@ class_name Main_Scene
 # main is captain, main will receive signals from the nodes under it and then give them commands
 # This pattern of control ought to be copied down top level down
 
-# call this function here if you want to exit
-# change the code if you require some special process to exit safely
-func close_game():
-	get_tree().quit()
+var level_loader: LevelLoader
+var level_menu: LevelMenu
+var title_ui: TitleUI
+
+func open_level_menu():
+	level_menu.show_menu()
+	
+func load_next_level():
+	level_loader.load_next_level()
+	level_menu.hide_menu()
+
+func back_to_menu():
+	pass
+	#level_menu.hide_menu()

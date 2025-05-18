@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1cyjv42vov5b"]
+
+[ext_resource type="Script" uid="uid://dsc3twtput0vc" path="res://Main_Game_Features/moveable_body/moveable_body.gd" id="1_lksxp"]
+[ext_resource type="Texture2D" uid="uid://usjglsc6inkg" path="res://Resources/debugTextures/debugIcon.png" id="2_8con2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfqy"]
+size = Vector2(79, 83)
+
+[node name="Block" type="CharacterBody2D"]
+script = ExtResource("1_lksxp")
+metadata/_custom_type_script = "uid://dsc3twtput0vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_vlfqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.649259, 0.649259)
+texture = ExtResource("2_8con2")
