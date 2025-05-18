@@ -26,8 +26,12 @@ func _on_level_request(level: int) -> void:
 	ui_controller.hide_level_select()
 	level_loader.load_level(level)
 
-func _on_level_loader_level_menu_request() -> void:
+func _on_level_loader_level_menu_request(level: int) -> void:
 	ui_controller.show_level_menu()
+	if level > SaveManager.levels_save.levels_completed:
+		SaveManager.increment_levels_completed()
+		SaveManager.save()
+		ui_controller.update_level_select()
 
 func _on_ui_controller_deload_level_request() -> void:
 	level_loader.deload_level()

@@ -52,3 +52,6 @@ func _on_level_select_main_menu_request() -> void:
 	if title:
 		hide_level_select()
 		title.show()
+	
+func update_level_select() -> void:
+	level_select.update_buttons()

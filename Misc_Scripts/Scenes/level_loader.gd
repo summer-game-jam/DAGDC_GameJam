@@ -1,7 +1,7 @@
 extends Node
 class_name LevelLoader
 
-signal level_menu_request
+signal level_menu_request(level: int)
 
 var current_level: Level
 var current_level_number: int
@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 			current_level = ResourceLoader.load_threaded_get(current_map).instantiate()
 			add_child(current_level)
 			current_level.connect("level_menu_request", on_level_menu_request)
+			current_level.level_number = current_level_number
 			loading_level = false
 
 func load_level(level: int) -> void:
@@ -52,6 +53,6 @@ func deload_level() -> void:
 func load_next_level():
 	load_level(current_level_number + 1)
 
-func on_level_menu_request() -> void:
-	emit_signal("level_menu_request")
+func on_level_menu_request(level: int) -> void:
+	emit_signal("level_menu_request", level)
 	

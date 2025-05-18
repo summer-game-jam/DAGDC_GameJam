@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://chhwm7slx40mc"]
+[gd_scene load_steps=7 format=3 uid="uid://bmf8mkmj4diaw"]
 
 [ext_resource type="Script" uid="uid://bar6mgrtcax2u" path="res://Main/Main.gd" id="1_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://b703y16r1yxoj" path="res://Main/quick_esc_listener.tscn" id="1_yh5la"]
 [ext_resource type="Texture2D" uid="uid://rogvfvs7mfc5" path="res://Resources/debugTextures/background.jpg" id="5_k3v36"]
 [ext_resource type="Script" uid="uid://dk3g5ugf2yhp0" path="res://Misc_Scripts/Scenes/move_parallax.gd" id="5_liyct"]
 [ext_resource type="PackedScene" uid="uid://efjob33rrb2s" path="res://Main/menu_ui/controller/ui_controller.tscn" id="6_liyct"]
-[ext_resource type="PackedScene" uid="uid://b1jlm1yrlnyys" path="res://Main/music.tscn" id="7_ib3t1"]
 [ext_resource type="Script" uid="uid://d3752cy5vxsf5" path="res://Misc_Scripts/Scenes/level_loader.gd" id="8_f6fdm"]
 
 [node name="Main" type="Node"]
@@ -16,8 +15,7 @@ follow_viewport_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(2.5, 2.5)
-
-motion_offset = Vector2(3.84816e+06, 0)
+motion_offset = Vector2(3.62684e+06, 0)
 motion_mirroring = Vector2(4590, 0)
 script = ExtResource("5_liyct")
 
@@ -32,8 +30,6 @@ centered = false
 script = ExtResource("8_f6fdm")
 
 [node name="UIController" parent="." instance=ExtResource("6_liyct")]
-
-[node name="Music" parent="." instance=ExtResource("7_ib3t1")]
 
 [connection signal="level_menu_request" from="LevelLoader" to="." method="_on_level_loader_level_menu_request"]
 [connection signal="deload_level_request" from="UIController" to="." method="_on_ui_controller_deload_level_request"]
