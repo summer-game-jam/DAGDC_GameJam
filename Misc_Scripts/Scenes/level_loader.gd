@@ -48,9 +48,10 @@ func load_level(level: int) -> void:
 		current_level_number = level
 		loading_level = true
 
-func deload_level() -> void:
+func deload_level() -> int:
 	if current_level:
 		current_level.queue_free()
+	return current_level_number
 
 func load_next_level():
 	load_level(current_level_number + 1)
