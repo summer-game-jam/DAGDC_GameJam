@@ -52,13 +52,18 @@ func _on_level_select_main_menu_request() -> void:
 	if title:
 		hide_level_select()
 		title.show()
-	
+
 func update_level_select() -> void:
 	level_select.update_buttons()
 
 func _on_escape_menu_reset_request() -> void:
 	emit_signal("reset_request")
 	$EscapeMenu.visible = false
+
+func _on_escape_menu_quit_request() -> void:
+	$EscapeMenu.visible = false
+	emit_signal("deload_level_request")
+	title.show()
 
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("escape") and in_level):

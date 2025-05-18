@@ -30,4 +30,5 @@ visible = false
 [connection signal="main_menu_request" from="LevelSelect" to="." method="_on_level_select_main_menu_request"]
 [connection signal="main_menu_request" from="LevelMenu" to="." method="_on_level_menu_main_menu_request"]
 [connection signal="next_level_request" from="LevelMenu" to="." method="_on_level_menu_next_level_request"]
+[connection signal="quit_request" from="EscapeMenu" to="." method="_on_escape_menu_quit_request"]
 [connection signal="reset_request" from="EscapeMenu" to="." method="_on_escape_menu_reset_request"]
