@@ -29,5 +29,9 @@ func check_if_pressed() -> void:
 			break
 	if pressed_down:
 		connected_device.toggle_power(true)
+		$AudioStreamPlayer2D.play()
+		$AnimatedSprite2D.play("pressed")
 	else:
+		$AudioStreamPlayer2D2.play()
 		connected_device.toggle_power(false)
+		$AnimatedSprite2D.play("not_pressed")

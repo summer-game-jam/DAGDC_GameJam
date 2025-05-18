@@ -28,6 +28,7 @@ func pick_up():
 	if closest_object and !picked_up_object:
 		picked_up_object = closest_object
 		picked_up_object.disabled = true
+		picked_up_object.velocity = Vector2(0, 0)
 
 func drop():
 	if picked_up_object:
@@ -45,4 +46,8 @@ func rotate_cast(new_direction: bool):
 		$RayCast2D.target_position.x = -100
 	else:
 		$RayCast2D.target_position.x = 100
-	#if picked_up_object is 
+	if picked_up_object:
+		print(picked_up_object.get_children())
+		print( picked_up_object.has_node("lazar"))
+	if picked_up_object and picked_up_object.has_node("lazar"):
+		picked_up_object.get_node("lazar").swap_direction(new_direction)

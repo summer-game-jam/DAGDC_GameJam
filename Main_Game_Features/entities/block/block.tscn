@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1cyjv42vov5b"]
+[gd_scene load_steps=5 format=3 uid="uid://1cyjv42vov5b"]
 
 [ext_resource type="Script" uid="uid://dsc3twtput0vc" path="res://Main_Game_Features/moveable_body/moveable_body.gd" id="1_lksxp"]
-[ext_resource type="Texture2D" uid="uid://usjglsc6inkg" path="res://Resources/debugTextures/debugIcon.png" id="2_8con2"]
+[ext_resource type="Texture2D" uid="uid://ccb2u1t4xjsl3" path="res://Resources/object_textures/crate.png" id="2_8con2"]
+[ext_resource type="AudioStream" uid="uid://jja1bp2oonki" path="res://Resources/audio/soundEffects/moving-with-table-105076.mp3" id="3_vlfqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfqy"]
 size = Vector2(79, 83)
@@ -15,5 +16,8 @@ position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_vlfqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.649259, 0.649259)
+scale = Vector2(1.311, 1.311)
 texture = ExtResource("2_8con2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vlfqy")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0bas4q7mb6tu"]
+
+[ext_resource type="Script" uid="uid://3wyk4ugld36l" path="res://Main_Game_Features/entities/spwaner/spwaner.gd" id="1_wv5l0"]
+[ext_resource type="TileSet" uid="uid://cnv00lmd7fhdh" path="res://Main_Game_Features/entities/spwaner/tube_set.tres" id="2_s5ram"]
+[ext_resource type="AudioStream" uid="uid://bnmgidpysywf7" path="res://Resources/audio/soundEffects/spawn-sound-43782.mp3" id="3_u72gx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv5l0"]
+size = Vector2(199.5, 71.5)
+
+[node name="Spwaner" type="Node2D"]
+script = ExtResource("1_wv5l0")
+metadata/_custom_type_script = "uid://3wyk4ugld36l"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-94, -38)
+scale = Vector2(1.52034, 1.52034)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_s5ram")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Spawner"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.25, 28.25)
+shape = SubResource("RectangleShape2D_wv5l0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u72gx")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

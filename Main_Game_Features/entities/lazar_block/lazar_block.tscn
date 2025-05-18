@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://r100jm0h2on2"]
+[gd_scene load_steps=9 format=3 uid="uid://r100jm0h2on2"]
 
 [ext_resource type="Script" uid="uid://b6rad2d88pln7" path="res://Main_Game_Features/entities/lazar_block/lazar.gd" id="1_thw06"]
 [ext_resource type="Script" uid="uid://dsc3twtput0vc" path="res://Main_Game_Features/moveable_body/moveable_body.gd" id="2_7w04q"]
+[ext_resource type="Texture2D" uid="uid://cq207yh5nke0n" path="res://Resources/object_textures/laser_block.png" id="3_08txn"]
+[ext_resource type="AudioStream" uid="uid://7awqdy3k3arg" path="res://Resources/audio/soundEffects/energy-hum-29083.mp3" id="4_xr7s4"]
+[ext_resource type="AudioStream" uid="uid://jja1bp2oonki" path="res://Resources/audio/soundEffects/moving-with-table-105076.mp3" id="5_1h7dq"]
+[ext_resource type="Script" uid="uid://blghs0br6dh01" path="res://Main_Game_Features/entities/lazar_block/area_2d.gd" id="5_rtqfu"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7w04q"]
-size = Vector2(100, 100)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1h7dq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08txn"]
 size = Vector2(98, 99)
@@ -17,7 +20,8 @@ metadata/_custom_type_script = "uid://dsc3twtput0vc"
 script = ExtResource("1_thw06")
 
 [node name="Sprite2D" type="Sprite2D" parent="lazar"]
-texture = SubResource("PlaceholderTexture2D_7w04q")
+scale = Vector2(1.57463, 1.57463)
+texture = ExtResource("3_08txn")
 
 [node name="RayCast2D" type="RayCast2D" parent="lazar"]
 target_position = Vector2(5000, 1)
@@ -27,6 +31,22 @@ collide_with_areas = true
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 default_color = Color(0, 0.65129, 0.653022, 1)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="lazar"]
+stream = ExtResource("4_xr7s4")
+autoplay = true
+
+[node name="Area2D" type="Area2D" parent="lazar"]
+collision_layer = 2
+script = ExtResource("5_rtqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lazar/Area2D"]
+shape = SubResource("CircleShape2D_1h7dq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_08txn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1h7dq")
+
+[connection signal="finished" from="lazar/AudioStreamPlayer2D" to="lazar" method="_on_audio_stream_player_2d_finished"]

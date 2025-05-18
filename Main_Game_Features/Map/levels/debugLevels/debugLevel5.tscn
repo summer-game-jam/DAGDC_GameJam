@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://7mrkhxbxawy8"]
+[gd_scene load_steps=9 format=4 uid="uid://7mrkhxbxawy8"]
 
 [ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_f4wdo"]
-[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/spwaner.tscn" id="2_4x3i5"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_4x3i5"]
 [ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_d4667"]
 [ext_resource type="PackedScene" uid="uid://1cyjv42vov5b" path="res://Main_Game_Features/entities/block/block.tscn" id="4_nqj0f"]
 [ext_resource type="PackedScene" uid="uid://r100jm0h2on2" path="res://Main_Game_Features/entities/lazar_block/lazar_block.tscn" id="5_4x3i5"]
 [ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="6_d4667"]
+[ext_resource type="PackedScene" uid="uid://6e7ni4rn0f8a" path="res://Main_Game_Features/entities/lazar_target/lazar_target.tscn" id="7_5oyyi"]
+[ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="8_3px83"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_f4wdo")
@@ -28,3 +30,10 @@ position = Vector2(1362, 281)
 position = Vector2(605, 418)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_d4667")]
+
+[node name="lazar_target" parent="." instance=ExtResource("7_5oyyi")]
+position = Vector2(129, 846)
+
+[node name="door" parent="." instance=ExtResource("8_3px83")]
+position = Vector2(890, 225)
+rotation = 1.63663

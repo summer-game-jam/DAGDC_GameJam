@@ -15,6 +15,9 @@ class_name Main_Scene
 func _on_quit_request() -> void:
 	get_tree().quit()
 
+func _ready():
+	$Music.play_happy()
+
 func _on_next_level_request() -> void:
 	ui_controller.hide_level_menu()
 	level_loader.load_next_level()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_khirn"]
 [ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="2_h72wl"]
-[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/spwaner.tscn" id="3_buxhn"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="3_buxhn"]
 [ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="4_ko8p6"]
 [ext_resource type="PackedScene" uid="uid://c1s0q4yyjdd3c" path="res://Main_Game_Features/entities/button/button.tscn" id="5_ko8p6"]
 [ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="6_sae8p"]
@@ -26,13 +26,14 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = ExtResource("2_h72wl")
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(512, 493, 506, 588, 704, 577, 703, 754)
+points = PackedVector2Array(512, 511, 506, 588, 704, 577, 703, 754)
 
 [node name="door" parent="." instance=ExtResource("4_ko8p6")]
-position = Vector2(711, 765)
+z_index = 1
+position = Vector2(705, 783)
 scale = Vector2(0.434541, 0.434541)
 
 [node name="button" parent="." node_paths=PackedStringArray("connected_entity") instance=ExtResource("5_ko8p6")]
-position = Vector2(518, 473)
+position = Vector2(517, 520)
 scale = Vector2(0.314373, 0.314373)
 connected_entity = NodePath("../door")
