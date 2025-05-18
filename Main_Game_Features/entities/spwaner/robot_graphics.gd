@@ -26,3 +26,8 @@ func update_battery(battery_precent:float):
 		$battery.play("80")
 	else:
 		$battery.play("full")
+
+func reached_goal():
+	$battery.visible = false
+	$face.play("dead")
+	$AudioStreamPlayer2D.play()

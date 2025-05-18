@@ -79,3 +79,8 @@ func move_player(delta: float) -> void:
 func face_direction(new_direction: bool):
 	$robot_graphics.flip(new_direction)
 	$pick_up_ability.rotate_cast(new_direction)
+
+func reached_goal():
+	$Timer.stop()
+	$robot_graphics.reached_goal()
+	dead = true

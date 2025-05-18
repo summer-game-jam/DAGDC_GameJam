@@ -110,10 +110,11 @@ script = ExtResource("1_q3ky5")
 texture = ExtResource("5_yxvbo")
 
 [node name="battery" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -40)
+position = Vector2(-4, -37)
 scale = Vector2(1.14508, 1.14508)
 sprite_frames = SubResource("SpriteFrames_jv5ot")
-animation = &"full"
+animation = &"40"
+offset = Vector2(5.13, -2.445)
 
 [node name="thread" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_at0v2")
