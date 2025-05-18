@@ -16,6 +16,8 @@ func _ready() -> void:
 	if current_dir:
 		var files = current_dir.get_files()
 		for file in files:
+			if file.ends_with(".remap"):
+				file = file.replace(".remap", "")
 			levels.append(file)
 	levels.sort()
 	print(levels)
