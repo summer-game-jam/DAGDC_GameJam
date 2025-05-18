@@ -30,3 +30,6 @@ position = Vector2(272, 424)
 position = Vector2(1637, 468)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_bt7mq")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(976, 471)

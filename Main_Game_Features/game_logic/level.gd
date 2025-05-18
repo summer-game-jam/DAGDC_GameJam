@@ -19,7 +19,10 @@ var robots: Array[Playable_Robot] = []
 var robot_in_production: bool = true
 var is_level_over: bool = false
 
+@onready var camera: game_cam =  get_parent().get_node("game_cam")
+
 func _ready() -> void:
+	camera.center = $Node2D
 	for child in get_children():
 		if child is Spwaner:
 			spawners.append(child)
@@ -52,10 +55,10 @@ func spwan_robot(spawner: Spwaner):
 		spawner.spwan_robot(new_robot)
 		add_child(new_robot)
 		robot_in_production = true
+		camera.set_robot(new_robot)
 
 func robot_died():
 	robot_in_production = false
-
 
 func _on_goal_hit_by_player():
 	emit_signal("level_menu_request", level_number)
