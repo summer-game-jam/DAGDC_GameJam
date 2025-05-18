@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://yo7jugt2uo3a"]
+[gd_scene load_steps=8 format=4 uid="uid://yo7jugt2uo3a"]
 
 [ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_ty6nh"]
 [ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_rwvqu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_11fw1"]
 [ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_so5tp"]
 [ext_resource type="PackedScene" uid="uid://c1s0q4yyjdd3c" path="res://Main_Game_Features/entities/button/button.tscn" id="6_rwvqu"]
+[ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="7_oxcvd"]
 
 [node name="1" type="Node2D"]
 script = ExtResource("1_ty6nh")
@@ -36,3 +37,7 @@ position = Vector2(1011, 548)
 [node name="button" parent="." instance=ExtResource("6_rwvqu")]
 position = Vector2(1368, 1030)
 scale = Vector2(0.31783, 0.31783)
+
+[node name="door" parent="." instance=ExtResource("7_oxcvd")]
+position = Vector2(1376, 295)
+scale = Vector2(0.588663, 0.588663)
