@@ -20,5 +20,11 @@ func _on_next_level_request() -> void:
 	level_loader.load_next_level()
 
 func _on_level_request(level: int) -> void:
-	#ui_controller.hide_level_select()
+	ui_controller.hide_level_select()
 	level_loader.load_level(level)
+
+func _on_level_loader_level_menu_request() -> void:
+	ui_controller.show_level_menu()
+
+func _on_ui_controller_deload_level_request() -> void:
+	level_loader.deload_level()

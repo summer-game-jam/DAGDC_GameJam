@@ -38,14 +38,15 @@ func load_level(level: int) -> void:
 		# come back to this -> eric
 		current_level.queue_free()
 		
-	current_map = directory + "/" + levels[level - 1]
-	print(current_map)
-	ResourceLoader.load_threaded_request(current_map)
-	current_level_number = level
-	
-	loading_level = true
+	if level <= len(levels):
+		current_map = directory + "/" + levels[level - 1]
+		print(current_map)
+		ResourceLoader.load_threaded_request(current_map)
+		current_level_number = level
+		
+		loading_level = true
 
-func unload_level() -> void:
+func deload_level() -> void:
 	if current_level:
 		current_level.queue_free()
 
