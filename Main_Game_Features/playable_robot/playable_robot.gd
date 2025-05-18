@@ -3,6 +3,8 @@ class_name Playable_Robot
 
 signal bot_out_of_power
 
+var max_time = 10
+
 var jump_force: float = -600
 var air_speed_reduction: float = 0.2
 
@@ -12,6 +14,7 @@ var horizonal_move_speed: float = 2000
 var dead: bool = false
 
 func _ready() -> void:
+	$Timer.wait_time = max_time
 	$Timer.start()
 
 func _physics_process(delta: float) -> void:
@@ -36,6 +39,7 @@ func _on_node_button_held_limit_reached() -> void:
 #replace me
 func update_battery() -> void:
 	$Label.text = str($Timer.time_left)
+	$robot_graphics.update_battery($Timer.time_left / $Timer.wait_time)
 
 func move_player(delta: float) -> void:
 	#Phase 1 read user input (the dead can't input)
@@ -73,6 +77,5 @@ func move_player(delta: float) -> void:
 # true = face left
 # right = face right
 func face_direction(new_direction: bool):
-	$Sprite2D.flip_h = new_direction
-	$AnimatedSprite2D.flip_h = new_direction
+	$robot_graphics.flip(new_direction)
 	$pick_up_ability.rotate_cast(new_direction)

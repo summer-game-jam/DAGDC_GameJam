@@ -1,0 +1,126 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfxwu1alcegtw"]
+
+[ext_resource type="Texture2D" uid="uid://8fx2oim408xg" path="res://Resources/robot_textures/treads.png" id="1_i1m30"]
+[ext_resource type="Script" uid="uid://bjlmn1cvw2d8g" path="res://Main_Game_Features/entities/spwaner/robot_graphics.gd" id="1_q3ky5"]
+[ext_resource type="Texture2D" uid="uid://bdksma8ub6swv" path="res://Resources/robot_textures/battery_0.png" id="2_md7n6"]
+[ext_resource type="Texture2D" uid="uid://dr4hvw6smce2k" path="res://Resources/robot_textures/head_dead.png" id="2_yxvbo"]
+[ext_resource type="Texture2D" uid="uid://blcl7gvp87ody" path="res://Resources/robot_textures/head_low_battery.png" id="3_cjuhb"]
+[ext_resource type="Texture2D" uid="uid://bna2hyb22d21j" path="res://Resources/robot_textures/battery_20.png" id="3_q3ky5"]
+[ext_resource type="Texture2D" uid="uid://gcxf7gadqc1v" path="res://Resources/robot_textures/battery_40.png" id="4_6t60k"]
+[ext_resource type="Texture2D" uid="uid://b20tg1axrvfqu" path="res://Resources/robot_textures/head_charged.png" id="4_ll0lh"]
+[ext_resource type="Texture2D" uid="uid://g0w3fuyo2iwk" path="res://Resources/robot_textures/battery_60.png" id="5_dk5sn"]
+[ext_resource type="Texture2D" uid="uid://822m4uyyuvol" path="res://Resources/robot_textures/robot_base.png" id="5_yxvbo"]
+[ext_resource type="Texture2D" uid="uid://dmqkmyfiedsam" path="res://Resources/robot_textures/battery_80.png" id="6_x0jfl"]
+[ext_resource type="Texture2D" uid="uid://dgfbi4xwqy1tx" path="res://Resources/robot_textures/battery_100.png" id="7_r705l"]
+[ext_resource type="AudioStream" uid="uid://cg6pjj46ole55" path="res://Resources/audio/soundEffects/power-down-7103.mp3" id="13_6t60k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jv5ot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_md7n6")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q3ky5")
+}],
+"loop": true,
+"name": &"20",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6t60k")
+}],
+"loop": true,
+"name": &"40",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dk5sn")
+}],
+"loop": true,
+"name": &"60",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x0jfl")
+}],
+"loop": true,
+"name": &"80",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_r705l")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_at0v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i1m30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odim4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yxvbo")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cjuhb")
+}],
+"loop": true,
+"name": &"low",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ll0lh")
+}],
+"loop": true,
+"name": &"powered",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q3ky5")
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("5_yxvbo")
+
+[node name="battery" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -40)
+scale = Vector2(1.14508, 1.14508)
+sprite_frames = SubResource("SpriteFrames_jv5ot")
+animation = &"full"
+
+[node name="thread" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_at0v2")
+
+[node name="face" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_odim4")
+animation = &"powered"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_6t60k")

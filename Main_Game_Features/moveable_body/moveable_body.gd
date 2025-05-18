@@ -39,6 +39,10 @@ func push_block(push_force: float) -> void:
 	print(push_force)
 	#stops weird back and forth feedback loop (one directional push)
 	if !push_cooldown:
+		if has_node("AudioStreamPlayer2D"):
+			var audio: AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
+			if !audio.playing:
+				audio.play()
 		velocity.x += push_force
 		#velocity.x = clamp(velocity.x, -max_push_speed, max_push_speed)
 		push_cooldown = true
