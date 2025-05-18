@@ -6,6 +6,7 @@
 custom_minimum_size = Vector2(100, 33)
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("1_q61w7")
 
