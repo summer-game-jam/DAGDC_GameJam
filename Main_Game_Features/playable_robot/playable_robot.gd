@@ -16,8 +16,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	update_battery()
-	if !dead:
-		move_player(delta)
+	if disabled:
+		return
+	move_player(delta)
 	move_and_slide()
 	if abs(velocity.y) < 100: # shouldn't push if in air
 		handle_push_collisions(delta)
@@ -25,6 +26,7 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if !dead:
 		dead = true
+		$pick_up_ability.drop()
 		emit_signal("bot_out_of_power")
 
 func _on_node_button_held_limit_reached() -> void:
@@ -42,8 +44,10 @@ func move_player(delta: float) -> void:
 	
 	if !dead:
 		if Input.is_action_pressed("left"):
+			face_direction(true)
 			horizonal_move_unit_vector -= 1
 		elif Input.is_action_pressed("right"):
+			face_direction(false)
 			horizonal_move_unit_vector += 1
 		if Input.is_action_just_pressed("jump"):
 			jump = true
@@ -65,3 +69,10 @@ func move_player(delta: float) -> void:
 		velocity.y += gravity * delta
 		velocity.x += delta * horizonal_move_unit_vector * horizonal_move_speed * air_speed_reduction
 		velocity.x = clamp(velocity.x, -max_horizonal_move_speed, max_horizonal_move_speed)
+
+# true = face left
+# right = face right
+func face_direction(new_direction: bool):
+	$Sprite2D.flip_h = new_direction
+	$AnimatedSprite2D.flip_h = new_direction
+	$pick_up_ability.rotate_cast(new_direction)
