@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2jgxxsmm2cnj"]
 
-[ext_resource type="Script" uid="uid://du76l1slpf8xq" path="res://Misc_Scripts/Scenes/level_menu.gd" id="1_5ttn0"]
+[ext_resource type="Script" uid="uid://du76l1slpf8xq" path="res://Misc_Scripts/Scenes/level_menu.gd" id="1_0w748"]
 
 [node name="LevelMenu" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5ttn0")
+script = ExtResource("1_0w748")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

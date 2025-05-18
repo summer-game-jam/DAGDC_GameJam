@@ -1,11 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6wyuv5npsddv"]
 
-[ext_resource type="Script" uid="uid://3lso8ibulkhr" path="res://level_button.gd" id="1_ryjig"]
+[ext_resource type="Script" uid="uid://3lso8ibulkhr" path="res://level_button.gd" id="1_q61w7"]
 
-[node name="Button" type="Button"]
+[node name="LevelButton" type="Button"]
 custom_minimum_size = Vector2(100, 33)
 offset_right = 8.0
 offset_bottom = 8.0
-script = ExtResource("1_ryjig")
+text = "0"
+script = ExtResource("1_q61w7")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

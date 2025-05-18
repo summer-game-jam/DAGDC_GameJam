@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckn8m7wgq7735"]
+[gd_scene load_steps=2 format=3 uid="uid://ckn8m7wgq7735"]
 
 [ext_resource type="Script" uid="uid://koc6qnjstjs8" path="res://Misc_Scripts/Scenes/level_select.gd" id="1_n0hfa"]
-[ext_resource type="PackedScene" uid="uid://c6wyuv5npsddv" path="res://Main/menu_ui/controller/button.tscn" id="2_r4nx7"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -46,50 +45,8 @@ theme_override_constants/h_separation = 90
 theme_override_constants/v_separation = 90
 columns = 5
 
-[node name="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button2" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button3" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button4" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button5" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button6" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button7" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button8" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button9" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button10" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button11" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_r4nx7")]
-layout_mode = 2
-text = "-1"
-
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "BACK"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

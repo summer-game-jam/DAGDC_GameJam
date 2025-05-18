@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://efjob33rrb2s"]
 
 [ext_resource type="Script" uid="uid://cc2nmctwbcg5e" path="res://Main/ui_controller.gd" id="1_ibdv5"]
-[ext_resource type="PackedScene" uid="uid://b64hu8w8db2fd" path="res://Main/menu_ui/title_ui.tscn" id="2_m37ue"]
+[ext_resource type="PackedScene" uid="uid://b64hu8w8db2fd" path="res://Main/menu_ui/controller/title_ui.tscn" id="2_m37ue"]
 [ext_resource type="PackedScene" uid="uid://ckn8m7wgq7735" path="res://Main/menu_ui/controller/level_select.tscn" id="3_ibdv5"]
-[ext_resource type="PackedScene" uid="uid://c2jgxxsmm2cnj" path="res://Main/menu_ui/level_menu.tscn" id="4_1lfnu"]
+[ext_resource type="PackedScene" uid="uid://c2jgxxsmm2cnj" path="res://Main/menu_ui/controller/level_menu.tscn" id="4_1lfnu"]
 
 [node name="ui_controller" type="CanvasLayer"]
 script = ExtResource("1_ibdv5")
@@ -15,3 +15,10 @@ visible = false
 
 [node name="LevelMenu" parent="." instance=ExtResource("4_1lfnu")]
 visible = false
+
+[connection signal="quit_request" from="title_ui" to="." method="_on_title_ui_quit_request"]
+[connection signal="start_request" from="title_ui" to="." method="_on_title_ui_start_request"]
+[connection signal="level_request" from="LevelSelect" to="." method="_on_level_request"]
+[connection signal="main_menu_request" from="LevelSelect" to="." method="_on_level_select_main_menu_request"]
+[connection signal="main_menu_request" from="LevelMenu" to="." method="_on_level_menu_main_menu_request"]
+[connection signal="next_level_request" from="LevelMenu" to="." method="_on_level_menu_next_level_request"]
