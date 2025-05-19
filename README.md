@@ -12,10 +12,10 @@ Caiden Chadwick
 
 Ui Design
 Caiden Chadwick
+Lloyd Thomas
 
 Game Design
 Eric Chrisman
-Jacob Rogers
 
 Level Design
 Eric Chrisman
@@ -25,3 +25,10 @@ Lloyd Thomas
 
 Story
 Eric Chrisman
+
+Writing
+Lloyd Thomas
+Eric Chrisman
+
+Pixel Art
+Travis Blamer
