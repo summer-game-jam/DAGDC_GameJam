@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvxlvlhe1tcn4"]
+
+[ext_resource type="Script" uid="uid://dbosgdwd12n4u" path="res://Main/level_loader/level_hud.gd" id="1_46q10"]
+
+[node name="LevelHUD" type="CanvasLayer"]
+script = ExtResource("1_46q10")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = 70.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="HUD" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="CenterContainer/HUD"]
+layout_mode = 2
+
+[node name="Robots" type="HBoxContainer" parent="CenterContainer/HUD"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/HUD/Robots"]
+layout_mode = 2
+text = "Robots:"
+vertical_alignment = 1
+
+[node name="RobotsLeft" type="Label" parent="CenterContainer/HUD/Robots"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="Battery" type="HBoxContainer" parent="CenterContainer/HUD"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/HUD/Battery"]
+layout_mode = 2
+text = "Battery:"
+vertical_alignment = 1
+
+[node name="BatteryLife" type="Label" parent="CenterContainer/HUD/Battery"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1

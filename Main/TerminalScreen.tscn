@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dpb68s2gjvgnh"]
+
+[node name="TerminalScreen" type="RichTextLabel"]
+text = "Placeholder"
