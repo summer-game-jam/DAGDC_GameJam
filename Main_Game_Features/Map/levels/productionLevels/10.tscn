@@ -19,6 +19,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = ExtResource("3_tq1r0")
 
 [node name="Goal" parent="." instance=ExtResource("4_ty0ut")]
-position = Vector2(1667, 303)
+position = Vector2(241, 539)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_3olep")]

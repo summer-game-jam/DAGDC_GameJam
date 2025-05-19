@@ -1,48 +1,48 @@
 [gd_scene load_steps=9 format=4 uid="uid://yo7jugt2uo3a"]
 
-[ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_ty6nh"]
-[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_rwvqu"]
-[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_oxcvd"]
-[ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_11fw1"]
-[ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_so5tp"]
-[ext_resource type="PackedScene" uid="uid://c1s0q4yyjdd3c" path="res://Main_Game_Features/entities/button/button.tscn" id="6_rwvqu"]
-[ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="7_oxcvd"]
-[ext_resource type="PackedScene" uid="uid://1cyjv42vov5b" path="res://Main_Game_Features/entities/block/block.tscn" id="8_11fw1"]
+[ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_8hc72"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_yjly7"]
+[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_lfiim"]
+[ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_vbphe"]
+[ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_leax8"]
+[ext_resource type="PackedScene" uid="uid://c1s0q4yyjdd3c" path="res://Main_Game_Features/entities/button/button.tscn" id="6_5y7md"]
+[ext_resource type="PackedScene" uid="uid://bdtk1as60blo3" path="res://Main_Game_Features/entities/door/door.tscn" id="7_k8oc0"]
+[ext_resource type="PackedScene" uid="uid://1cyjv42vov5b" path="res://Main_Game_Features/entities/block/block.tscn" id="8_4qjih"]
 
 [node name="1" type="Node2D"]
-script = ExtResource("1_ty6nh")
+script = ExtResource("1_8hc72")
 max_robot_limit = 8
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
-[node name="Spwaner" parent="." instance=ExtResource("2_rwvqu")]
+[node name="Spwaner" parent="." instance=ExtResource("2_yjly7")]
 position = Vector2(948, 66)
 
-[node name="Spwaner2" parent="." instance=ExtResource("2_rwvqu")]
+[node name="Spwaner2" parent="." instance=ExtResource("2_yjly7")]
 position = Vector2(1372, 790)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAANAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAgAAAAAAAAALAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAFAAMAAAAAAAAAAAALAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAMAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAP//AAAAAAAAAAAOAP//AAAAAAAAAAANAP//AAAAAAAAAAAMAP//AAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAP//AAAAAAAAAAAQAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAMAP7/AAAAAAAAAAALAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAA=")
-tile_set = ExtResource("3_oxcvd")
+tile_set = ExtResource("3_lfiim")
 
-[node name="Goal" parent="." instance=ExtResource("4_11fw1")]
+[node name="Goal" parent="." instance=ExtResource("4_vbphe")]
 position = Vector2(1667, 303)
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(1414, 398, 1517, 493, 1667, 631, 1667, 786, 1663, 965, 1776, 1033, 1720, 1155, 1506, 1206, 1286, 1203, 1365, 1105, 1365, 1026)
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_so5tp")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_leax8")]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1011, 548)
 
-[node name="button" parent="." node_paths=PackedStringArray("connected_entity") instance=ExtResource("6_rwvqu")]
+[node name="button" parent="." node_paths=PackedStringArray("connected_entity") instance=ExtResource("6_5y7md")]
 position = Vector2(1368, 1030)
 scale = Vector2(0.31783, 0.31783)
 connected_entity = NodePath("../door")
 
-[node name="door" parent="." instance=ExtResource("7_oxcvd")]
+[node name="door" parent="." instance=ExtResource("7_k8oc0")]
 position = Vector2(1405, 266)
 scale = Vector2(0.449326, 0.421243)
 
-[node name="Block" parent="." instance=ExtResource("8_11fw1")]
+[node name="Block" parent="." instance=ExtResource("8_4qjih")]
 position = Vector2(378, 975)

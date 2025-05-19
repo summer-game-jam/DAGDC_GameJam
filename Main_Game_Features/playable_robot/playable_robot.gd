@@ -14,7 +14,6 @@ var horizonal_move_speed: float = 2000
 var dead: bool = false
 
 func _ready() -> void:
-	$Timer.wait_time = max_time
 	$Timer.start()
 
 func _physics_process(delta: float) -> void:
@@ -84,3 +83,6 @@ func reached_goal():
 	$Timer.stop()
 	$robot_graphics.reached_goal()
 	dead = true
+	
+func set_time(battery_life: int):
+	$Timer.wait_time = battery_life

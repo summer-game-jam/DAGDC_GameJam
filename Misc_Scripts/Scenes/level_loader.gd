@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		print(progress[0])
 		if progress[0] == 1:
 			current_level = ResourceLoader.load_threaded_get(current_map).instantiate()
+			print(current_level.battery_life, current_level.level_name, current_level.max_robot_limit)
 			add_child(current_level)
 			current_level.connect("level_menu_request", on_level_menu_request)
 			current_level.level_number = current_level_number

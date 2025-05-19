@@ -1,35 +1,35 @@
 [gd_scene load_steps=8 format=4 uid="uid://dojk16s4xg8l8"]
 
-[ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_8c06o"]
-[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_oijxt"]
-[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_5tkju"]
-[ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_o5nqt"]
-[ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_tkbd6"]
-[ext_resource type="PackedScene" uid="uid://bjwvo62ry3jin" path="res://sprite_2d.tscn" id="6_7apqd"]
-[ext_resource type="PackedScene" uid="uid://1cyjv42vov5b" path="res://Main_Game_Features/entities/block/block.tscn" id="7_oijxt"]
+[ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_smhee"]
+[ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_l5s58"]
+[ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_q0hfy"]
+[ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_jwk1m"]
+[ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_fn3ea"]
+[ext_resource type="PackedScene" uid="uid://bjwvo62ry3jin" path="res://sprite_2d.tscn" id="6_metuh"]
+[ext_resource type="PackedScene" uid="uid://1cyjv42vov5b" path="res://Main_Game_Features/entities/block/block.tscn" id="7_8wpke"]
 
 [node name="1" type="Node2D"]
-script = ExtResource("1_8c06o")
+script = ExtResource("1_smhee")
 level_name = "Payload Transfer"
 max_robot_limit = 5
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
-[node name="Spwaner" parent="." instance=ExtResource("2_oijxt")]
+[node name="Spwaner" parent="." instance=ExtResource("2_l5s58")]
 position = Vector2(939, 293)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAACAAcAAAAAAAAAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAADAAYAAQAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAANAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAALAAQAAQAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAQAAQAAAAAAAAABAAYAAQAAAAAAAAACAAYAAQAAAAAAAAA=")
-tile_set = ExtResource("3_5tkju")
+tile_set = ExtResource("3_q0hfy")
 
-[node name="Goal" parent="." instance=ExtResource("4_o5nqt")]
+[node name="Goal" parent="." instance=ExtResource("4_jwk1m")]
 position = Vector2(1610, 438)
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_tkbd6")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_fn3ea")]
 
-[node name="Sprite2D" parent="." instance=ExtResource("6_7apqd")]
+[node name="Sprite2D" parent="." instance=ExtResource("6_metuh")]
 position = Vector2(1610, 791)
 
-[node name="Block" parent="." instance=ExtResource("7_oijxt")]
+[node name="Block" parent="." instance=ExtResource("7_8wpke")]
 position = Vector2(275, 224)
 
 [node name="Node2D" type="Node2D" parent="."]

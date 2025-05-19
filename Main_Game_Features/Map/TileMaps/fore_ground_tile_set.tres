@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://cw1a14ujn7xcw"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cw1a14ujn7xcw"]
 
 [ext_resource type="Texture2D" uid="uid://gu7tx1605vam" path="res://Resources/tile_textures/wall_tile.png" id="1_ncvn3"]
 [ext_resource type="Texture2D" uid="uid://cik8cjsu4v240" path="res://Resources/tile_textures/floor_basic_tile.png" id="2_ncvn3"]
@@ -29,6 +29,13 @@ texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/modulate = Color(0.306923, 0.306923, 0.306923, 1)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f56ei"]
+texture = ExtResource("1_ncvn3")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0.564706)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -19, -64, -20)
+
 [resource]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
@@ -36,3 +43,4 @@ sources/1 = SubResource("TileSetAtlasSource_usjp6")
 sources/0 = SubResource("TileSetAtlasSource_b3dal")
 sources/2 = SubResource("TileSetAtlasSource_76k1r")
 sources/3 = SubResource("TileSetAtlasSource_lt5s5")
+sources/4 = SubResource("TileSetAtlasSource_f56ei")

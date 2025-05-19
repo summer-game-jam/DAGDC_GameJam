@@ -3,6 +3,12 @@ class_name Door
 
 var door_opened: bool = false
 
+@export var defalut_state: bool = false
+
+func _ready() -> void:
+	$Power_Node.unpowered_state = defalut_state
+	$Power_Node.update()
+
 func open_door() -> void:
 	if !door_opened:
 		$AudioStreamPlayer2D.play()
