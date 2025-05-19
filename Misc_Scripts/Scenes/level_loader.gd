@@ -33,6 +33,10 @@ func _process(delta: float) -> void:
 			add_child(current_level)
 			current_level.connect("level_menu_request", on_level_menu_request)
 			current_level.level_number = current_level_number
+			$LevelHUD.set_level_name(current_level.level_name)
+			$LevelHUD.set_robots(current_level.max_robot_limit)
+			$LevelHUD.set_battery_life(10)
+			$LevelHUD.visible = true
 			loading_level = false
 
 func load_level(level: int) -> void:
@@ -53,6 +57,7 @@ func load_level(level: int) -> void:
 func deload_level() -> int:
 	$game_cam.reset()
 	if current_level:
+		$LevelHUD.visible = false
 		current_level.queue_free()
 	return current_level_number
 
