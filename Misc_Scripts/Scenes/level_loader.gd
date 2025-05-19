@@ -50,7 +50,7 @@ func load_level(level: int) -> void:
 		loading_level = true
 
 
-func deload_level() -> void:
+func deload_level() -> int:
 	$game_cam.reset()
 	if current_level:
 		current_level.queue_free()

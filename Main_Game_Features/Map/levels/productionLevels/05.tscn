@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://csg7a2g8m2so7"]
+[gd_scene load_steps=7 format=4 uid="uid://csg7a2g8m2so7"]
 
 [ext_resource type="Script" uid="uid://t6wke0s34n72" path="res://Main_Game_Features/game_logic/level.gd" id="1_23rgw"]
 [ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="2_lbey1"]
 [ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="3_rxine"]
 [ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_kga40"]
 [ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="5_lbey1"]
+[ext_resource type="PackedScene" uid="uid://bjwvo62ry3jin" path="res://sprite_2d.tscn" id="6_rxine"]
 
 [node name="1" type="Node2D"]
 script = ExtResource("1_23rgw")
-level_name = "Story One"
-max_robot_limit = 8
+level_name = "[ERROR] :: L0C4T10N UNKN0WN"
+max_robot_limit = 1
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
 [node name="Spwaner" parent="." instance=ExtResource("3_rxine")]
@@ -26,3 +27,6 @@ position = Vector2(1667, 303)
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1002, 437)
+
+[node name="Sprite2D" parent="." instance=ExtResource("6_rxine")]
+position = Vector2(797, 740)

@@ -59,6 +59,7 @@ func spwan_robot(spawner: Spwaner):
 
 func robot_died():
 	robot_in_production = false
+	camera.soft_reset()
 
 func _on_goal_hit_by_player():
 	emit_signal("level_menu_request", level_number)
@@ -69,3 +70,9 @@ func request_level_menu():
 func level_over():
 	is_level_over = true
 	robots[-1].reached_goal()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("r"):
+		if robots.size() > 1:
+			var robot_to_remove: Playable_Robot = robots.pop_front()
+			robot_to_remove.queue_free()

@@ -19,10 +19,6 @@ shape = SubResource("RectangleShape2D_lqg5j")
 wait_time = 10.0
 one_shot = true
 
-[node name="Button" type="Button" parent="Timer"]
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = -20.0
@@ -32,7 +28,7 @@ offset_bottom = -36.0
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_x7d6m")
-max_held_time_requirment = 1.0
+max_held_time_requirment = 0.3
 
 [node name="pick_up_ability" type="Node2D" parent="."]
 script = ExtResource("5_jw5dh")
