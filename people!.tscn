@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjq6ysghddeu4"]
+
+[ext_resource type="Texture2D" uid="uid://bwuxe5ynoncei" path="res://Resources/object_textures/cryovat_no_head.png" id="1_rdhjt"]
+[ext_resource type="Texture2D" uid="uid://c1000nqnoptdc" path="res://Resources/object_textures/cryovat_head.png" id="2_mqrlw"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(2.54227, 2.54227)
+texture = ExtResource("1_rdhjt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mqrlw")

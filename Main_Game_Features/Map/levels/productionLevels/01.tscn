@@ -29,8 +29,22 @@ position = Vector2(1689, 687)
 position = Vector2(952, 661)
 
 [node name="Terminal" parent="." instance=ExtResource("6_61b1s")]
-offset_left = 672.0
-offset_top = 301.0
-offset_right = 672.0
-offset_bottom = 301.0
-text = "Controls"
+offset_left = 445.0
+offset_top = 232.0
+offset_right = 1115.0
+offset_bottom = 565.0
+text = "> Robot.controls.help
+
+> CONTROLS
+> A, D = MOVE :::::::::::: <SPACE> = JUMP
+> CLICK PIPE HEAD TO CONSTRUCT DRONE"
+
+[node name="Terminal2" parent="." instance=ExtResource("6_61b1s")]
+offset_left = 1045.0
+offset_top = 739.0
+offset_right = 1715.0
+offset_bottom = 1072.0
+text = "> STATUS.UPDATE.PAYLOAD.1
+
+> PROTOCOL SUNSHINE STARTED
+> EXTERIOR SENSOR READINGS NOMINAL"

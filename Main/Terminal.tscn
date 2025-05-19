@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dpmi6bx7lpf37" path="res://Main/terminal.gd" id="1_ue7fn"]
 
 [node name="Terminal" type="MarginContainer"]
+z_index = 1
 script = ExtResource("1_ue7fn")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -32,14 +33,15 @@ color = Color(0.0708272, 0.0708272, 0.0708272, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 6
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/MarginContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(600, 200)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.486275, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "uiaerilnsgtrjinsomsro;mns;ormnbosaermnvb;oaremnvb;kjaerv;oaemrv; addsfasdf sdf asdf asdf asd uiaerilnsgtrjinsomsro;mns;ormnbosaermnvb;oaremnvb;kjaerv;oaemrv; addsfasdf sdf asdf asdf asd "
 autowrap_mode = 3

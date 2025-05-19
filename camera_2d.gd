@@ -20,6 +20,8 @@ func _process(delta):
 		target_position = (robot_to_follow.global_position + center.global_position) * 0.5
 	elif center:
 		target_position = center.global_position
+	elif robot_to_follow:
+		target_position = robot_to_follow.global_position
 	
 	var offset = target_position - global_position
 	var distance = offset.length()

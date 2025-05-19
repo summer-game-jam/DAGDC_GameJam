@@ -12,6 +12,7 @@ var spawners: Array[Spwaner]
 var goal: Goal
 
 signal level_menu_request(level: int)
+signal robot_spwan
 
 var robot_generator: Robot_Factory = Robot_Factory.new()
 
@@ -58,6 +59,7 @@ func spwan_robot(spawner: Spwaner):
 		add_child(new_robot)
 		robot_in_production = true
 		camera.set_robot(new_robot)
+		emit_signal("robot_spwan", new_robot)
 
 func robot_died():
 	robot_in_production = false
@@ -71,7 +73,8 @@ func request_level_menu():
 	
 func level_over():
 	is_level_over = true
-	robots[-1].reached_goal()
+	if robots.size() != 0:
+		robots[-1].reached_goal()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("r"):

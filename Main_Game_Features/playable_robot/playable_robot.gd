@@ -13,6 +13,9 @@ var horizonal_move_speed: float = 2000
 
 var dead: bool = false
 
+var cutsence_battery = false
+var update_value = 1
+
 func _ready() -> void:
 	$Timer.start()
 
@@ -37,8 +40,11 @@ func _on_node_button_held_limit_reached() -> void:
 
 #replace me
 func update_battery() -> void:
-	$Label.text = str($Timer.time_left)
-	$robot_graphics.update_battery($Timer.time_left / $Timer.wait_time)
+	if cutsence_battery:
+		$robot_graphics.update_battery(update_value)
+	else:
+		$Label.text = str($Timer.time_left)
+		$robot_graphics.update_battery($Timer.time_left / $Timer.wait_time)
 
 func move_player(delta: float) -> void:
 	#Phase 1 read user input (the dead can't input)
