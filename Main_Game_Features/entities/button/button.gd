@@ -24,7 +24,7 @@ func check_if_pressed() -> void:
 		return
 	var pressed_down: bool = false
 	for child in $Area2D.get_overlapping_bodies():
-		if child is Playable_Robot:
+		if child is MoveableBody:
 			pressed_down = true
 			break
 	if pressed_down:

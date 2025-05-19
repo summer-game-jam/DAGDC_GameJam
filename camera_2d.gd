@@ -5,7 +5,7 @@ var mode: bool = false
 var defalut_spot: Vector2
 var center: Node2D
 var robot_to_follow: Playable_Robot
-var desired_Zoom: float = 0.7
+var desired_Zoom: float = 0.6
 
 @export var acceleration: float = 8.0
 @export var max_speed: float = 10000.0
@@ -41,4 +41,4 @@ func set_robot(robot: Playable_Robot):
 
 func soft_reset():
 	robot_to_follow = null
-	desired_Zoom = 0.7
+	desired_Zoom = 0.6

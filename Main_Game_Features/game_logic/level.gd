@@ -3,6 +3,7 @@ class_name Level
 
 @export var level_name: String
 @export var max_robot_limit: int = 3
+@export var battery_life: int = 10
 var level_number: int
 
 # all levels need a start, a map, and a endpoint
@@ -53,6 +54,7 @@ func spwan_robot(spawner: Spwaner):
 			var robot_to_remove: Playable_Robot = robots.pop_front()
 			robot_to_remove.queue_free()
 		spawner.spwan_robot(new_robot)
+		new_robot.set_time(battery_life)
 		add_child(new_robot)
 		robot_in_production = true
 		camera.set_robot(new_robot)
