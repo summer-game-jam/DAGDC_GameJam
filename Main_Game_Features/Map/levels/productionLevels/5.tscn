@@ -23,3 +23,6 @@ tile_set = ExtResource("2_lbey1")
 position = Vector2(1667, 303)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_lbey1")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1002, 437)

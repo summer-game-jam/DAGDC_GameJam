@@ -37,10 +37,8 @@ func _on_level_menu_main_menu_request() -> void:
 func _on_level_menu_next_level_request() -> void:
 	emit_signal("next_level_request")
 
-
 func _on_title_ui_quit_request() -> void:
 	emit_signal("quit_request")
-
 
 func _on_title_ui_start_request() -> void:
 	if level_select:
