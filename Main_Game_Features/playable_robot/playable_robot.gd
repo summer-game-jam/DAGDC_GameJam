@@ -64,7 +64,10 @@ func move_player(delta: float) -> void:
 			velocity.y = 0
 		if horizonal_move_unit_vector == 0:
 			velocity.x *= 0.9
+			$AudioStreamPlayer2D.stop()
 		else:
+			if !$AudioStreamPlayer2D.playing:
+				$AudioStreamPlayer2D.play()
 			velocity.x += delta * horizonal_move_unit_vector * horizonal_move_speed
 			velocity.x = clamp(velocity.x, -max_horizonal_move_speed, max_horizonal_move_speed)
 	#can move very slowly; can't jump; can't move bodys

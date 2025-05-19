@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0bas4q7mb6tu" path="res://Main_Game_Features/entities/spwaner/med_spwaner.tscn" id="2_jxacq"]
 [ext_resource type="TileSet" uid="uid://cw1a14ujn7xcw" path="res://Main_Game_Features/Map/TileMaps/fore_ground_tile_set.tres" id="3_qo2s3"]
 [ext_resource type="PackedScene" uid="uid://bwtrldc8in3me" path="res://Main_Game_Features/entities/goal/goal.tscn" id="4_7h2wc"]
-[ext_resource type="PackedScene" uid="uid://bjwvo62ry3jin" path="res://sprite_2d.tscn" id="5_egtjd"]
+[ext_resource type="PackedScene" uid="uid://cvjjpim6d8xsn" path="res://Main/Terminal.tscn" id="6_61b1s"]
 [ext_resource type="PackedScene" uid="uid://decx3ai0grif7" path="res://Main_Game_Features/Map/levels/debugLevels/parallax_background.tscn" id="6_d4a0n"]
 
 [node name="1" type="Node2D"]
@@ -23,10 +23,14 @@ tile_set = ExtResource("3_qo2s3")
 [node name="Goal" parent="." instance=ExtResource("4_7h2wc")]
 position = Vector2(1689, 687)
 
-[node name="Sprite2D" parent="." instance=ExtResource("5_egtjd")]
-position = Vector2(952, 272)
-
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_d4a0n")]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(952, 661)
+
+[node name="Terminal" parent="." instance=ExtResource("6_61b1s")]
+offset_left = 672.0
+offset_top = 301.0
+offset_right = 672.0
+offset_bottom = 301.0
+text = "Controls"

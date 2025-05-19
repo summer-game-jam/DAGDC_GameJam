@@ -7,30 +7,39 @@ script = ExtResource("1_ue7fn")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 2
-color = Color(0.95158, 0.95158, 0.95158, 1)
+color = Color(0.137302, 0.359163, 0.211845, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect2/MarginContainer/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer/ColorRect/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 color = Color(0.0708272, 0.0708272, 0.0708272, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/MarginContainer/ColorRect/MarginContainer/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_colors/default_color = Color(0.2, 0.933333, 0.2, 1)
-scroll_active = false
-autowrap_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.486275, 0, 1)
+text = "uiaerilnsgtrjinsomsro;mns;ormnbosaermnvb;oaremnvb;kjaerv;oaemrv; addsfasdf sdf asdf asdf asd uiaerilnsgtrjinsomsro;mns;ormnbosaermnvb;oaremnvb;kjaerv;oaemrv; addsfasdf sdf asdf asdf asd "
+autowrap_mode = 3

@@ -31,3 +31,10 @@ func reached_goal():
 	$battery.visible = false
 	$face.play("dead")
 	$AudioStreamPlayer2D.play()
+
+func play_thread(yes: bool):
+	if yes and !$thread.is_playing():
+		$thread.play()
+	else:
+		$thread.stop()
+		

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbflqsiceky2l"]
+[gd_scene load_steps=7 format=3 uid="uid://cbflqsiceky2l"]
 
 [ext_resource type="Script" uid="uid://oynod3im0sb6" path="res://Main_Game_Features/playable_robot/playable_robot.gd" id="1_lqg5j"]
 [ext_resource type="PackedScene" uid="uid://dfxwu1alcegtw" path="res://Main_Game_Features/entities/spwaner/robot_graphics.tscn" id="4_r64l7"]
 [ext_resource type="Script" uid="uid://g7g8h6gm4yfo" path="res://Misc_Scripts/Utility/hold_right_click_listener.gd" id="4_x7d6m"]
+[ext_resource type="AudioStream" uid="uid://ctbcp0j6j1qnu" path="res://Resources/audio/soundEffects/driving-tank-engine-88503.mp3" id="5_f8uke"]
 [ext_resource type="Script" uid="uid://deixueuvv175" path="res://Main_Game_Features/playable_robot/pick_up_ability.gd" id="5_jw5dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqg5j"]
@@ -38,6 +39,10 @@ target_position = Vector2(100, 0)
 
 [node name="robot_graphics" parent="." instance=ExtResource("4_r64l7")]
 scale = Vector2(1.51966, 1.51966)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_f8uke")
+volume_db = -5.897
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_held_limit_reached" from="Node" to="." method="_on_node_button_held_limit_reached"]

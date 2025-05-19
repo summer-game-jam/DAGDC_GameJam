@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfxwu1alcegtw"]
+[gd_scene load_steps=19 format=3 uid="uid://dfxwu1alcegtw"]
 
 [ext_resource type="Texture2D" uid="uid://8fx2oim408xg" path="res://Resources/robot_textures/treads.png" id="1_i1m30"]
 [ext_resource type="Script" uid="uid://bjlmn1cvw2d8g" path="res://Main_Game_Features/entities/spwaner/robot_graphics.gd" id="1_q3ky5"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://822m4uyyuvol" path="res://Resources/robot_textures/robot_base.png" id="5_yxvbo"]
 [ext_resource type="Texture2D" uid="uid://dmqkmyfiedsam" path="res://Resources/robot_textures/battery_80.png" id="6_x0jfl"]
 [ext_resource type="Texture2D" uid="uid://dgfbi4xwqy1tx" path="res://Resources/robot_textures/battery_100.png" id="7_r705l"]
+[ext_resource type="Texture2D" uid="uid://qqwjf1r0plxe" path="res://Resources/object_textures/treads_1.png" id="10_x0jfl"]
+[ext_resource type="Texture2D" uid="uid://b850mawf1kwbi" path="res://Resources/object_textures/treads_2.png" id="11_r705l"]
 [ext_resource type="AudioStream" uid="uid://cg6pjj46ole55" path="res://Resources/audio/soundEffects/power-down-7103.mp3" id="13_6t60k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jv5ot"]
@@ -70,10 +72,16 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_i1m30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x0jfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r705l")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_odim4"]
@@ -118,6 +126,7 @@ offset = Vector2(5.13, -2.445)
 
 [node name="thread" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_at0v2")
+frame_progress = 0.115253
 
 [node name="face" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_odim4")

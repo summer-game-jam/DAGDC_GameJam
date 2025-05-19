@@ -1,11 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b64hu8w8db2fd"]
 
 [ext_resource type="Script" uid="uid://cnrdhw1cuu6dr" path="res://Main/menu_ui/title_ui.gd" id="1_w0tpr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0wjnw"]
-font_size = 76
-outline_size = 25
-outline_color = Color(0.164706, 0.788235, 0, 1)
+[ext_resource type="Texture2D" uid="uid://ci6wccgeglrxq" path="res://Resources/object_textures/logo.png" id="2_seubp"]
 
 [sub_resource type="Animation" id="Animation_0wjnw"]
 resource_name = "RESET"
@@ -34,7 +30,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(732.5, -500), Vector2(732.5, 257)]
+"values": [Vector2(760, 826), Vector2(618, 108)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -65,17 +61,16 @@ grow_vertical = 2
 script = ExtResource("1_w0tpr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-modulate = Color(0, 0, 0, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.5
-offset_top = -1018.5
-offset_right = 227.5
-offset_bottom = -495.5
+offset_left = -342.0
+offset_top = -402.0
+offset_right = 418.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -90,23 +85,27 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_constants/separation = 150
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Game Title"
-label_settings = SubResource("LabelSettings_0wjnw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
-[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 550)
+layout_mode = 2
+texture = ExtResource("2_seubp")
+stretch_mode = 4
+
+[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
@@ -119,12 +118,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ecakf")
 }
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
