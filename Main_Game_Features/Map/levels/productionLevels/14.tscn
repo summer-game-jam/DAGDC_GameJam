@@ -9,7 +9,7 @@
 [node name="1" type="Node2D"]
 script = ExtResource("1_f824t")
 max_robot_limit = 4
-battery_life = 6
+battery_life = 5
 metadata/_custom_type_script = "uid://t6wke0s34n72"
 
 [node name="Spwaner" parent="." instance=ExtResource("2_7j3fy")]
